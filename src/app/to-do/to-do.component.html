@@ -1,0 +1,14 @@
+  <h1 style="margin-left: 100px;">To-Do-List</h1>
+ <div style="margin-left: 150px;">
+  <nz-table #basicTable [nzData]="allNotes" [nzFrontPagination]="false">
+    <thead >
+      <tr>
+        <th ><input type="text" #title placeholder="Title" ></th>
+        <th> <button (click)="addtask(title.value)" nzType="primary">Add</button></th>
+      </tr>
+    </thead>
+  </nz-table>
+  <ul *ngFor ="let item of allNotes, let i = index">
+       <li >{{item.name}} <button (click)="delete(i)" nzType="primary">Delete</button></li>
+  </ul>
+</div>
